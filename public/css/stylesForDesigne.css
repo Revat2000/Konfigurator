@@ -1,0 +1,549 @@
+/* полоса цветной прокрутки  */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #10e3ff;
+  width: 0%;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* фиксация верхнего меню */
+#navbar {
+  overflow: hidden;
+  z-index: 1;
+  background-color: white;
+}
+
+#navbar a {
+  float: right;
+  display: block;
+  color: #555;
+  text-align: center;
+  padding: 10px 12px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #ddd;
+  color: #555;
+}
+
+.sticky {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  width: 100%;
+}
+
+/* Button Blue Show Marking */
+.btnMarking, .btn, .btnEmail, .kvv_card button, .btnReport{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  padding: 5px 7px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #10e3ff;
+  color: #555;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btnMarking:hover, .btn:hover, .btnEmail:hover, .btnReport:hover {
+  margin-top: 10px;
+  padding: 5px 7px;
+  background: #ddd;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/*  форма отправки на  Email */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.sendForm {
+  display: none;
+  /* display: block;
+  width: 100%; */
+}
+
+.sendForm.show {
+  display: block;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.sendForm.show #inputEmail, .sendForm.show #phone, .sendForm.show #selCountry, .sendForm.show #phoneOther {
+  /* display: block; */
+  border-radius: 5px;
+  padding: 12px;
+  margin: 6px 0 16px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.sendForm.show #sendFormHeader {
+  text-align: center;
+}
+
+#redStar{
+  color: red;
+}
+    /* активация блока ввода другой страны */
+.otherCountruBlock{
+  display: none;
+}
+
+.otherCountruBlock.show{
+  display: block;
+  margin: 0;
+}
+
+
+/* Стиль для вариантов присоединения к процессу  */
+.col-container {
+  /* display: flex;  */
+  display: flexbox; 
+  max-width: 900px;
+  height: auto;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  flex: 1;
+  padding: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 270px;
+  min-height: 417px;
+  margin: 5px;
+  text-align: center;
+  font-family: arial;
+  vertical-align: top;
+  /* overflow: auto; */
+}
+
+.card p, .card h4, .card h2{
+  margin: auto;
+  max-width: 90%;
+  padding: 5px;
+}
+
+.gosts_and_threads {
+  color: grey;
+  font-size: 20px;
+}
+
+.card button {
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+  text-align: center;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 5px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #10e3ff;
+  color: #555;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+/* Стиль для вариантов кабельных вводов */
+.kvv-container {
+  display: flexbox; 
+  max-width: 900px;
+  height: auto;
+}
+
+.kvv_card {
+  display: inline-block;
+  position: relative;
+  flex: 1;
+  padding: 4px;
+  box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.2);
+  max-width: 270px;
+  min-height: auto;
+  margin: 5px;
+  text-align: center;
+  font-family: arial;
+  vertical-align: top;
+  /* overflow: auto; */
+}
+
+.kvv_img img {
+  display: inline-block;
+  position: relative;
+  padding: 4px;
+  max-width: 170px;
+  max-height: 150px;
+  margin: 5px;
+  vertical-align: top;
+}
+
+.kvv_card p, .kvv_card h4, .kvv_card h2{
+  margin: auto;
+  max-width: 90%;
+  padding: 5px;
+}
+
+.kvv_card button:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+/*  отображение рисунка типа подсоединения в модальном окне */
+img.myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+img.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 30%;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: auto;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 70%;
+  }
+}
+
+
+
+/* слайдер показать/скрыть КВВ */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #10e3ff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #10e3ff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Убрать стрелки из цифровых инпутов  */
+#minDiapasone, #maxDiapasone, #mintKomp, #maxtKomp {
+  -moz-appearance: textfield;
+}
+
+#minDiapasone::-webkit-inner-spin-button, #maxDiapasone::-webkit-inner-spin-button {
+  display: none;
+}
+
+#mintKomp::-webkit-inner-spin-button, #maxtKomp::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+/* Popupp/push message if sending to Email was success*/
+#snackbar {
+  visibility: hidden;
+  background-color: rgb(85, 85, 85);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  bottom: 30px;
+  left: 5%;
+  right: 5%;
+  font-size: 17px;
+  opacity: 91%;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 8.5s;
+  animation: fadein 0.5s, fadeout 0.5s 8.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* футер */
+.footer {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(128 164 172);
+  box-shadow: 0px -1px 6px #0e0e0ef0;
+}
+
+
+/* Соцсети */
+.icon-bar {
+  display: inline-flex;
+}
+
+.icon-bar a {
+  position: relative;
+  height: 20px;
+  display: block;
+  text-align: center;
+  padding: 7px 10px 10px 10px;
+  margin: 0 0 0 5px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 23px;
+}
+
+.icon-bar a.creator {
+  font-size: 12px;
+  color: ghostwhite;
+  display: flex;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.icon-bar a:hover.instagram{ 
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.icon-bar a:hover.youtube {
+  background-color: #bb0000;
+}
+
+.instagram, .youtube {
+  color: white;
+  border-radius: 15%;
+}
+
+.split {
+  width: 50%;
+  overflow-x: hidden;
+}
+
+.left {
+  left: 0;
+  height: 50px;
+}
+
+.right {
+  right: 0;
+  height: 50px;
+}
+
+.centered {
+  /* position: absolute; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.centered h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

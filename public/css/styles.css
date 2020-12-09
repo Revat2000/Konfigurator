@@ -1,0 +1,521 @@
+mini reset
+body{
+  margin: 0;
+  background: #fafafa;
+}
+body,h1,h2,p,a,input{
+  color: #555;
+  margin: 3px 0 0 0;
+  font-family: Consolas, Arial;
+  text-decoration: none;
+}
+
+/* header styles */
+header{
+  width: 100%;
+  padding: 5px 0px 10px 0px; 
+  text-align: right;
+  background: white;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+}
+header a{
+  margin-left: 10px;
+  border-bottom: 2px solid #10e3ff;
+  padding: 4px;
+  cursor: pointer;
+}
+header a:hover{
+  background: #10e3ff;
+  color: black;
+}
+
+
+header .header_info {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 200px;
+  /* max-width: 900px; */
+  margin: 0px auto;
+  overflow: hidden;
+  /* background-color: #ddd; */
+  background-image: url("../images/bground/bg_head4.jpg");
+  /* background-image: url("../images/bground/maxresdefault.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  box-shadow: 0px 0px 6px #0e0e0ef0;
+  margin-bottom: 5px;
+}
+
+a.logo {
+  display: block;
+  margin: 10px 0 0 10px;
+  border-bottom: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+a.logo:hover{
+  background: none;
+}
+
+.img_logo {
+  /* display: flex; */
+  float: left;
+  margin-top: 15px;
+}
+
+.header_info .name {
+  margin-top: 60px;
+}
+
+.name h1 {
+  text-align: center;
+  /* font-size: 3em; */
+  font-size: xxx-large;
+  margin: 25px 0 35px 0;
+  color: rgb(58, 75, 97);
+  /* color: rgb(41, 40, 58); */
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 
+    0 1px 0 #ccc, 
+    0 2px 0 #c9c9c9, 
+    0 3px 0 #bbb, 
+    0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 0 5px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 3px 5px rgba(0,0,0,.2), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+@media screen and (max-width: 500px) {
+  .name h1 {
+    font-size: 9vw;
+  }
+  .img_logo {
+    justify-content: center;
+  }
+}
+
+
+/* content styles */
+.content{
+  max-width: 900px;
+  margin: 40px auto 40px;
+}
+
+input{
+  margin: 8px 0;
+  padding: 8px 2px;
+  border-width: 0 0 2px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #10e3ff;
+  border: 0;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+
+/* форма выбора данных пользователем */
+fieldset{
+  display: inline-block;
+  margin: 8px 0;
+  padding: 8px 2px;
+  /* border-width: 0 0 2px 0; */
+  border-width: 0;
+  width: 100%;
+}
+
+fieldset div{
+  margin: 10px;
+  width: 100%;
+}
+
+.fieldset_country{
+  border: none;
+}
+
+.fieldset_mutable_img div {
+  float: left; /** Задаем обтекание **/
+  margin: 10px 10px 10px 10px;
+  width: auto; /*Фиксируем ширину блока*/
+  text-align: left; /*Центрируем текст по горизонтали*/
+}
+
+.image_korpusD, .fieldset_mutable_img div img{
+  max-width: 100%;
+  height: auto;
+}
+
+.input_type_sensor_info .imagess, .input_type_sensor_info .image{
+  display: none;
+}
+.input_type_sensor_info .imagess.show, .input_type_sensor_info .image.show{
+  display: block;
+}
+.input_diapasone input{
+  margin: 8px 0;
+  padding: 8px 2px;
+  border-width:  0.5px;
+  width: 80px;
+  color: #555;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/* Блок итоговой маркирови  + Блок ручного ввода резьбы */
+.marking_block, .thread_block, .w3-container, .fieldset_KVV_info {
+  display: none;
+}
+
+.marking_block.active, .thread_block.active, .w3-container.active, .fieldset_KVV_info.active {
+  width: 99%;
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px;
+}
+
+#inputText, #inputThread, #inputClamp, #inputThreadKVV {
+  color: #555;
+  text-align: center;
+  font-size: 18px;
+}
+
+#inputText.marking_input.BGcolor {
+  color: #ffb3b3;
+}
+
+
+/* всплывающая подсказка для кнопки "Копировать" */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 15%;
+  margin-left: -81px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* Анимация и модернизация radio button */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+  box-shadow: 3px ;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #10e3ff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+top: 6px;
+left: 6px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: white;
+}
+
+
+/* Alert Box */
+.callout {
+  display: none;
+  position: fixed;
+  bottom: 65px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+}
+
+.callout.active {
+  display: block;
+}
+
+.callout-header {
+  padding: 15px 15px;
+  background: #555;
+  font-size: 25px;
+  color: white;
+}
+
+.callout-container {
+  display: flex;
+  padding: 5px;
+  background-color: #ccc;
+  color: black
+}
+
+.callout-container img {
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-top: 15px;
+  height: 30px;
+  width: 30px;
+  /* position: sticky; */
+  /* left: 150%; */
+}
+
+.callout-container span {
+  padding: 5px;
+  background-color: #ccc;
+  color: rgb(150, 30, 30);
+  font-size: 15px;
+}
+
+.callout-container ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.callout-container #alertText {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: lightgrey;
+}
+
+
+
+/* плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* якорный блок */
+div.anchorBlock, div.anchorBlockEmail {
+  display: block;
+  color: white;
+}
+
+div.anchorBlockEmail {
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+div.anchorBlock {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/* всплывающая подсказка диапазона давления */
+.hide {
+  display: flex;
+  align-items: center;
+}
+    
+.myDIV:hover + .hide {
+  color: red;
+}
+
+.input_diapasone{
+  width: inherit;
+}
+
+.wrapper{
+  display: flex;
+  width: fit-content;
+  margin-top: 0px;
+}
+
+.myDIV{
+  display: contents;
+  margin-top: 0px;
+}
+
+.input_diapasone p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+
+
+/* Alert message for diapasone */
+.alert {
+  display: none;
+}
+
+.alert.active {
+  display: block;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 98%;
+}
+
+.closebtnAlert {
+  margin-left: 15px;
+  margin-right: 20px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtnAlert:hover {
+  color: black;
+}
+
+.container.modelT.hidden {
+  display: none;
+}
+
+/* Термокомпенсация скрыть / показать*/
+.wrap_tKomp, .wrap_NOT_tKomp {
+  display: none;
+}
+
+.wrap_tKomp.active, .wrap_NOT_tKomp.active{
+  display: block;
+}
+
+#tKompP {
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+
+/* Report Box */
+.report {
+  display: none;
+  position: relative;
+  margin: 10px 10px;
+  width: 99%;
+}
+
+.report.active {
+  display: inline-block;
+}
+
+.report-header {
+  padding: 15px 15px;
+  background: #555;
+  font-size: 25px;
+  color: white;
+}
+
+.report-container {
+  display: flex;
+  padding: 5px;
+  background-color: #ccc;
+  color: black
+}
+
+#reportText {
+  margin: 10px;
+}
+
+/* 
+.report-container #alertText {
+  margin-bottom: 0px;
+  margin-top: 0px;
+} */
